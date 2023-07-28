@@ -1,6 +1,6 @@
 import loadable from "@loadable/component";
 
-const Dashboard = loadable(() => import("../pages/dashboard"));
+const Dashboard = loadable(() => import("../pages/doctor/dashboard"));
 
 export const userRoutes = [
   {
