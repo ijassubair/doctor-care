@@ -11,7 +11,8 @@ const PrivateRoute = () => {
       window.location.href = "/sign-in";
     }
   }, [location]);
-  return userCookie ? <AppLayout /> : <Navigate to="sign-in" />;
+  return <AppLayout />;
+  // userCookie ? <AppLayout /> : <Navigate to="sign-in" />;
 };
 
 export default PrivateRoute;

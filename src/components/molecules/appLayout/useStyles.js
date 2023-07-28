@@ -18,7 +18,7 @@ export const appLayoutStyles = {
   },
   scrollableContent: {
     overflowY: "auto",
-    height: "98vh",
-    padding: "20px",
+    height: "97vh",
+    padding: "25px",
   },
 };
