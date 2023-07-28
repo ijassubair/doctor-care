@@ -23,8 +23,8 @@ const CustomAppBar = () => {
     <AppBar
       position="fixed"
       open={open}
-      elevation={0}
-      sx={{ color: "black", bgcolor: "#213555" }}
+      elevation={2}
+      sx={{ color: "black", bgcolor: "white" }}
     >
       <Toolbar>
         <Grid container justifyContent="space-between">

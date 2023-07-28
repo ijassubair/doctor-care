@@ -11,7 +11,8 @@ const PrivateRoute = () => {
       window.location.href = "/chat-bot";
     }
   }, [location]);
-  return userCookie ? <AppLayout /> : <Navigate to="sign-in" />;
+  return <AppLayout />;
+  // userCookie ? <AppLayout /> : <Navigate to="sign-in" />;
 };
 
 export default PrivateRoute;

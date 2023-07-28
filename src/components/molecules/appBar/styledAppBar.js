@@ -1,8 +1,8 @@
 import { styled } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 
-const drawerWidth = 240;
-const closedDrawerWidth = 65;
+const drawerWidth = 0;
+const closedDrawerWidth = 0;
 export const StyledAppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({

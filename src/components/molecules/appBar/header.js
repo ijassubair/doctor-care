@@ -1,7 +1,6 @@
 import {
   Avatar,
   Box,
-  Button,
   Grid,
   IconButton,
   Menu,
@@ -10,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import RefreshIcon from "@mui/icons-material/Refresh";
+import DrawerFromRight from "../DrawerFromRight";
 
 const settings = ["Logout"];
 
@@ -25,7 +24,11 @@ const Header = () => {
   };
   return (
     <Grid container>
-      <Grid item x={{ padding: 1 }}>
+      <Grid sx={{ padding: 1 }}>
+        <DrawerFromRight />
+      </Grid>
+
+      <Grid item sx={{ padding: 1, marginLeft: "1rem" }}>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
