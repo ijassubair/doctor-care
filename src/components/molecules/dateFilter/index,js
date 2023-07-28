@@ -1,0 +1,7 @@
+const { Grid } = require("@mui/material");
+
+const DateFilter = () => {
+  return <Grid>Date</Grid>;
+};
+
+export default DateFilter;
