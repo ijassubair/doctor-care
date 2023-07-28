@@ -8,6 +8,7 @@ import AppLoader from "./components/atoms/appLoader/appLoader";
 import CustomSnackbarProvider from "./components/atoms/customSnackbarProvider/customSnackbarProvider";
 import "./utils/i18n";
 import "./index.css";
+import { Notifications } from 'react-push-notification';
 
 const App = () => {
   const appVariables = useSelector((store) => store?.appReducer);
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <StyledEngineProvider injectFirst>
+      <Notifications />
       <Suspense fallback={<AppLoader />}>
         <ThemeProvider theme={newTheme}>
           <CustomSnackbarProvider>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import addNotification from 'react-push-notification';
 
 const ChatBot = () => {
     const [prompt, setPrompt] = useState("");
@@ -14,6 +15,13 @@ const ChatBot = () => {
             .then((res) => {
                 // Update the response state with the server's response
                 setResponse(res.data);
+                addNotification({
+                    title: 'Warning',
+                    subtitle: 'This is a subtitle',
+                    message: res.data,
+                    theme: 'darkblue',
+                    native: true // when using native, your OS will handle theming.
+                });
             })
             .catch((err) => {
                 console.error(err);

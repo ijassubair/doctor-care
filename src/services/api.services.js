@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 import { HttpClient } from "./http.services";
 
 import { history } from "../history";
+import { BASE_URL } from "../config";
 
 const ApiRequestTypes = {
   get: "get",
@@ -93,16 +94,11 @@ const clearCacheAndRedirectToLogin = () => {
 
 //Login
 const callLogin = (data) => {
-  const url = `authenticator/token`;
+  const url = `${BASE_URL}/api/Authenticator/Auth`;
   return HttpClient[ApiRequestTypes.post](url, data, {
     headers: headersConfigFormData(),
   });
 };
-
-const chat = () => {
-  const url = `chat`;
-  return HttpClient[ApiRequestTypes.post](url, data, { headers : chatHeaderConfig()});
-}
 
 export const ApiService = {
   removeInterceptors,
