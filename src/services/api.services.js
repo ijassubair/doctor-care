@@ -20,6 +20,10 @@ const headersConfigFormData = (data) => ({
   ...(data ? data : {}),
 });
 
+const chatHeaderConfig = () => ({
+  "Content-Type": "application/json"
+})
+
 let instaInterceptor;
 // Set Interceptors
 const setInterceptors = (data) => {
@@ -95,6 +99,11 @@ const callLogin = (data) => {
   });
 };
 
+const chat = () => {
+  const url = `chat`;
+  return HttpClient[ApiRequestTypes.post](url, data, { headers : chatHeaderConfig()});
+}
+
 export const ApiService = {
   removeInterceptors,
   getAppVariables,
@@ -102,4 +111,5 @@ export const ApiService = {
   callLogin,
   removeAuthorization,
   createRefreshTokenFormData,
+  chat
 };
