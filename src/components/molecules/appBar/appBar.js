@@ -8,7 +8,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Header from "./header";
 import { StyledAppBar as AppBar } from "./styledAppBar";
-
+import logo from "../../../images/newLogo.png";
 const CustomAppBar = () => {
   const open = useSelector(sideBarStateSelector);
   const dispatch = useDispatch();
@@ -29,17 +29,7 @@ const CustomAppBar = () => {
       <Toolbar>
         <Grid container justifyContent="space-between">
           <Grid item>
-            <IconButton
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              sx={{
-                marginRight: 5,
-                color: "white",
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <img src={logo} alt="logo" height="47px" width="130px" />
           </Grid>
           <Grid item>
             <Header />

@@ -23,44 +23,48 @@ const Header = () => {
     setAnchorElUser(null);
   };
   return (
-    <Grid container>
-      <Grid sx={{ padding: 1 }}>
-        <DrawerFromRight />
-      </Grid>
+    <Grid container justifyContent="space-between">
+      <Grid item>
+        <Grid container>
+          <Grid item sx={{ padding: 1 }}>
+            <DrawerFromRight />
+          </Grid>
 
-      <Grid item sx={{ padding: 1, marginLeft: "1rem" }}>
-        <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title="Open settings">
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar
-                alt="X"
-                src="https://randomuser.me/api/portraits/lego/5.jpg"
-              />
-            </IconButton>
-          </Tooltip>
-          <Menu
-            sx={{ mt: "45px" }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{setting}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
+          <Grid item sx={{ padding: 1, marginLeft: "1rem" }}>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton
+                  onClick={handleOpenUserMenu}
+                  sx={{ p: 0.5, background: "grey", color: "white" }}
+                >
+                  RK
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
