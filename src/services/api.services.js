@@ -2,7 +2,8 @@ import Cookies from "js-cookie";
 
 import { HttpClient } from "./http.services";
 
-import { history } from "../history";
+// import { history } from "../";
+import { BASE_URL } from "../config";
 
 const ApiRequestTypes = {
   get: "get",
@@ -19,6 +20,10 @@ const headersConfigFormData = (data) => ({
   "Content-Type": "application/x-www-form-urlencoded",
   ...(data ? data : {}),
 });
+
+const chatHeaderConfig = () => ({
+  "Content-Type": "application/json"
+})
 
 let instaInterceptor;
 // Set Interceptors
@@ -83,16 +88,26 @@ const authInterface = (method, url, data) => {
 const clearCacheAndRedirectToLogin = () => {
   removeInterceptors();
   removeAuthorization();
-  history.replace("/login");
+  // history.replace("/login");
   window.location.reload();
 };
 
 //Login
 const callLogin = (data) => {
-  const url = `authenticator/token`;
+  const url = `${BASE_URL}/api/Authenticator/Auth`;
   return HttpClient[ApiRequestTypes.post](url, data, {
     headers: headersConfigFormData(),
   });
+};
+
+const getAllPatients = () => {
+  const url = `${BASE_URL}/api/Patient/GetAllPatients`;
+  return HttpClient[ApiRequestTypes.get](url);
+};
+
+const getTokensByDate = (data) => {
+  const url = `${BASE_URL}/api/Token/GetTokensByDate`;
+  return HttpClient[ApiRequestTypes.post](url, data);
 };
 
 export const ApiService = {
@@ -102,4 +117,6 @@ export const ApiService = {
   callLogin,
   removeAuthorization,
   createRefreshTokenFormData,
+  getAllPatients,
+  getTokensByDate
 };

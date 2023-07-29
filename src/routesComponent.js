@@ -7,6 +7,7 @@ import NoMatch from "./pages/noMatch";
 
 const SignIn = lazy(() => import("./pages/signIn"));
 const SignUp = lazy(() => import("./pages/signUp"));
+const ChatBot = lazy(() => import("./pages/chatBot"));
 
 const RoutesComponent = () => {
   return (
@@ -33,6 +34,11 @@ const RoutesComponent = () => {
         <Route
           path="sign-up"
           element={<PublicRoute component={SignUp} restricted={true} />}
+        />
+
+        <Route
+          path="chat-bot"
+          element={<PublicRoute component={ChatBot} restricted={true} />}
         />
       </Routes>
     </Router>

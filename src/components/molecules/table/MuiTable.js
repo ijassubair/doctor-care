@@ -8,31 +8,31 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
-const columns = [
-  { id: "name", label: "Name", minWidth: 170 },
-  { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
-  {
-    id: "population",
-    label: "Population",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "size",
-    label: "Size\u00a0(km\u00b2)",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "density",
-    label: "Density",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
-];
+// const columns = [
+//   { id: "name", label: "Name", minWidth: 170 },
+//   { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
+//   {
+//     id: "population",
+//     label: "Population",
+//     minWidth: 170,
+//     align: "right",
+//     format: (value) => value.toLocaleString("en-US"),
+//   },
+//   {
+//     id: "size",
+//     label: "Size\u00a0(km\u00b2)",
+//     minWidth: 170,
+//     align: "right",
+//     format: (value) => value.toLocaleString("en-US"),
+//   },
+//   {
+//     id: "density",
+//     label: "Density",
+//     minWidth: 170,
+//     align: "right",
+//     format: (value) => value.toFixed(2),
+//   },
+// ];
 
 function createData(name, code, population, size) {
   const density = population / size;
@@ -57,10 +57,11 @@ const rows = [
   createData("Brazil", "BR", 210147125, 8515767),
 ];
 
-export default function MuiTable({ tableMaxHeight }) {
+export default function MuiTable({ tableMaxHeight, rowData, columns }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+  console.log("Column -- ",columns)
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -88,7 +89,7 @@ export default function MuiTable({ tableMaxHeight }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows
+            {rowData
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
