@@ -1,5 +1,6 @@
 import loadable from "@loadable/component";
-const Dashboard = loadable(() => import("../pages/doctor/dashboard"));
+import Dashboard from "../pages/patient/dashboard";
+const DoctorDashboard = loadable(() => import("../pages/doctor/dashboard"));
 const Home = loadable(() => import("../pages/doctor/Home/Home"));
 
 export const userRoutes = [
@@ -11,6 +12,11 @@ export const userRoutes = [
   {
     id: "dashboard",
     path: "/dashboard/*",
+    component: <DoctorDashboard />,
+  },
+  {
+    id: "p_dashboard",
+    path: "patient/dashboard",
     component: <Dashboard />,
   },
 ];

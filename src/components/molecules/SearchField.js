@@ -4,11 +4,16 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function SearchField({ placeholder = "Search" }) {
+const SearchField = ({ placeholder = "Search" }) => {
   return (
     <Paper
       component="form"
-      sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400 }}
+      sx={{
+        p: "2px 4px",
+        display: "flex",
+        alignItems: "center",
+        width: "100%",
+      }}
     >
       <InputBase
         sx={{ ml: 1, flex: 1 }}
@@ -20,4 +25,6 @@ export default function SearchField({ placeholder = "Search" }) {
       </IconButton>
     </Paper>
   );
-}
+};
+
+export default SearchField;

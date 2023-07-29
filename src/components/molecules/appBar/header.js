@@ -10,9 +10,9 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import DrawerFromRight from "../DrawerFromRight";
+import { Navigate, useNavigate } from "react-router";
 
 const settings = ["Logout"];
-
 const Header = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const handleOpenUserMenu = (event) => {
@@ -22,6 +22,8 @@ const Header = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const navigate = useNavigate();
+
   return (
     <Grid container justifyContent="space-between">
       <Grid item>
@@ -58,7 +60,12 @@ const Header = () => {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate("/sign-in")}
+                    >
+                      {setting}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>

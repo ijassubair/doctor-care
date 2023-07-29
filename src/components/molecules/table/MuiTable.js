@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import { useNavigate } from "react-router";
 
 // const columns = [
 //   { id: "name", label: "Name", minWidth: 170 },
@@ -61,7 +62,7 @@ export default function MuiTable({ tableMaxHeight, rowData, columns }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  console.log("Column -- ",columns)
+  console.log("Column -- ", columns);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -70,6 +71,7 @@ export default function MuiTable({ tableMaxHeight, rowData, columns }) {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+  const navigate = useNavigate();
 
   return (
     <Paper sx={{ width: "100%" }}>
@@ -93,7 +95,13 @@ export default function MuiTable({ tableMaxHeight, rowData, columns }) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow
+                    hover
+                    role="checkbox"
+                    tabIndex={-1}
+                    key={row.code}
+                    onClick={() => navigate("/dashboard")}
+                  >
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

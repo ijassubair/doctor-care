@@ -7,8 +7,8 @@ export const loginSchema = (t) =>
     username: yup
       .string()
       .trim()
-      .required(t("validation.user_id_is_Required"))
-      .email(t("validation.invalid_email"))
-      .matches(rgxEmail, t("validation.email_valid")),
-    password: yup.string().trim().required(t("validation.password_required")),
+      .required(t("user id is Required"))
+      .email(t("invalid email"))
+      .matches(rgxEmail, t("email valid")),
+    password: yup.string().trim().required(t("password required")),
   });

@@ -67,24 +67,24 @@ const Dashboard = () => {
                 <Grid item>Last Prescription : </Grid>
                 <Grid item xs={12}>
                   <table>
-                    <th style={tableStyle}>Name</th>
-                    <th style={tableStyle}>Name</th>
-                    <th style={tableStyle}>Name</th>
+                    <th style={tableStyle}>Medicine Name</th>
+                    <th style={tableStyle}>Dosage</th>
+                    <th style={tableStyle}>Frequency</th>
                     <tbody style={tableStyle}>
                       <tr>
                         <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
+                        <td style={tableStyle}>500</td>
+                        <td style={tableStyle}> 1-1-1</td>
                       </tr>
                       <tr>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
+                        <td style={tableStyle}>Dablo 88</td>
+                        <td style={tableStyle}>350ph</td>
+                        <td style={tableStyle}>0-1-0</td>
                       </tr>{" "}
                       <tr>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
+                        <td style={tableStyle}>Carolose</td>
+                        <td style={tableStyle}>500</td>
+                        <td style={tableStyle}>0-1-0</td>
                       </tr>
                     </tbody>
                   </table>
@@ -107,24 +107,30 @@ const Dashboard = () => {
                 <Grid item>Test Details</Grid>
                 <Grid item xs={12}>
                   <table>
-                    <th style={tableStyle}>Name</th>
-                    <th style={tableStyle}>Name</th>
-                    <th style={tableStyle}>Name</th>
+                    <th style={tableStyle}>Test Name</th>
+                    <th style={tableStyle}>Date</th>
+                    <th style={tableStyle}>Result Summary</th>
                     <tbody style={tableStyle}>
                       <tr>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
+                        <td style={tableStyle}>PCH</td>
+                        <td style={tableStyle}>28/05/2023</td>
+                        <td style={tableStyle}>
+                          small variation, variation in janjjdhh rayiosu
+                        </td>
                       </tr>
                       <tr>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
+                        <td style={tableStyle}>Uricacid</td>
+                        <td style={tableStyle}>01/05/2023</td>
+                        <td style={tableStyle}>
+                          Actual value, variation in janjjdhh patdeec
+                        </td>
                       </tr>{" "}
                       <tr>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
-                        <td style={tableStyle}>Paracetamol</td>
+                        <td style={tableStyle}>tcH</td>
+                        <td style={tableStyle}>08/05/2023</td>
+                        <td style={tableStyle}>
+                          Normal, variation in janjjdhh Uragoap
+                        </td>
                       </tr>
                     </tbody>
                   </table>
