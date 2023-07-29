@@ -8,7 +8,7 @@ const PrivateRoute = () => {
   const userCookie = Cookies.get("accessToken");
   useEffect(() => {
     if (location.pathname === "/") {
-      window.location.href = "/chat-bot";
+      window.location.href = "/sign-in";
     }
   }, [location]);
   return <AppLayout />;

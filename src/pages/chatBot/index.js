@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import addNotification from 'react-push-notification';
+import { TextField } from "@mui/material";
 
 const ChatBot = () => {
     const [prompt, setPrompt] = useState("");
@@ -31,11 +32,16 @@ const ChatBot = () => {
     return (
         <div>
           <form onSubmit={handleSubmit}>
-            <input
+          <TextField
+            id="outlined-controlled"
+            label="Queries"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}/>
+            {/* <input
               type="text"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-            />
+            /> */}
             <button type="submit">Submit</button>
           </form>
           <p>{response}</p>

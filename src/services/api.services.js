@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 
 import { HttpClient } from "./http.services";
 
-import { history } from "../history";
+// import { history } from "../";
 import { BASE_URL } from "../config";
 
 const ApiRequestTypes = {
@@ -88,7 +88,7 @@ const authInterface = (method, url, data) => {
 const clearCacheAndRedirectToLogin = () => {
   removeInterceptors();
   removeAuthorization();
-  history.replace("/login");
+  // history.replace("/login");
   window.location.reload();
 };
 
@@ -100,6 +100,16 @@ const callLogin = (data) => {
   });
 };
 
+const getAllPatients = () => {
+  const url = `${BASE_URL}/api/Patient/GetAllPatients`;
+  return HttpClient[ApiRequestTypes.get](url);
+};
+
+const getTokensByDate = (data) => {
+  const url = `${BASE_URL}/api/Token/GetTokensByDate`;
+  return HttpClient[ApiRequestTypes.post](url, data);
+};
+
 export const ApiService = {
   removeInterceptors,
   getAppVariables,
@@ -107,5 +117,6 @@ export const ApiService = {
   callLogin,
   removeAuthorization,
   createRefreshTokenFormData,
-  chat
+  getAllPatients,
+  getTokensByDate
 };
